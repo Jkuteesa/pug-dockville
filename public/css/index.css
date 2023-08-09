@@ -1,0 +1,49 @@
+body{
+    background-image: url("/images/carparkx.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no repeat;
+    background-size: cover;
+    /* background-color: plum; */
+}
+
+
+/* .button{
+    background: linear-gradient(-135deg, var(--main-blue), var(--main-purple));
+    color: black;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 10px 20px;
+    text-decoration: none;
+    cursor: pointer;
+    border: solid;
+    border-radius: 10%;
+   /* position: ; 
+} */
+
+/* submit button */
+.button {
+    height: 45px;
+    margin: 45px 0;
+  }
+  
+  .button input {
+    height: 100%;
+    width: 50%;
+    margin-left: 20%;
+    outline: none;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    background-color: linear-gradient(135deg, var(--main-blue), var(--main-purple));
+    background-color: blue;
+    transition: all 0.3s ease;
+  }
+  
+  
+  .button input:hover {
+    background: linear-gradient(-135deg, var(--main-blue), var(--main-purple));
+  }
+  

@@ -1,0 +1,124 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9' crossorigin='anonymous')
+  link(rel='stylesheet' href='/css/navbar.css')
+  link(rel='stylesheet' href='/css/battery2.css')
+  title battery 
+// navbar starts here
+header(style='position: absolute; top: 0px; width: 100%;')
+  .top-nav(style='height: 100%; width: 100%;')
+    nav.navbar.navbar-expand-lg.bg-body-tertiary
+      .container-fluid
+        .navbar-brand Dockville
+        button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarSupportedContent.collapse.navbar-collapse.nav-center
+          ul.navbar-nav.me-auto.mb-2.mb-lg-0
+            li.nav-item
+              a.nav-link(href='home') Home
+            li.nav-item
+              a.nav-link(href='park') Parking 
+            li.nav-item
+              a.nav-link(href='battery2') Battery
+            li.nav-item
+              a.nav-link(href='tires') Tires
+          .dropdown
+            button.btn.dropdown-toggle.user-btn(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+              .user-image
+                img(src='/images/user-image.jpg' alt='')
+            ul.dropdown-menu
+              li
+                form(action='#' method='POST')
+                  button.dropdown-item(type='button') Revenue data
+              li
+                form(action='#' method='POST')
+                  button.dropdown-item(type='button') Want to log out
+              // <li><button class="dropdown-item" type="button"><button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Reset password</button></button></li>
+              li
+                button.dropdown-item(type='button' data-bs-toggle='modal' data-bs-target='#exampleModal') Reset password
+    // pop up for reset password starts here.
+    #exampleModal.modal.fade(tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true')
+      .modal-dialog
+        .modal-content
+          .modal-header
+            h1#exampleModalLabel.modal-title.fs-5 Reset password
+            button.btn-close(type='button' data-bs-dismiss='modal' aria-label='Close')
+          .modal-body
+            form
+              .mb-3
+                label.col-form-label(for='recipient-name') Enter email:
+                input#recipient-name.form-control(type='text')
+              .mb-3
+                label.col-form-label(for='recipient-name') Old password:
+                input#recipient-name.form-control(type='text')
+              .mb-3
+                label.col-form-label(for='recipient-name') New password:
+                input#recipient-name.form-control(type='text')
+          .modal-footer
+            button.btn.btn-secondary(type='button' data-bs-dismiss='modal') Close
+            button.btn.btn-primary(type='button') Confirm changes
+    // popup for reset password ends here.
+// navbar ends here
+.container(style='margin-top: 85px;')
+  .title Battery form
+  form#formid(name='registration' action='api/client/edit?id=+'battery2._id onsubmit='return Validate(event)' method='POST')
+    .user__details
+      .input__box
+        span.details
+          label(for='fname')  First Name
+        input#fname(type='text' name='fname')
+        span#fname-error
+      .input__box
+        span.details
+          label(for='lname')  Last Name
+        input#lname(type='text' name='lname')
+        span#lname-error
+      .input__box
+        span.details
+          label(for='gender') Gender 
+        select#gender(name='gender')
+          option(selected='') 
+          option(value='Female') Female
+          option(value='Male') Male
+        span#gender-error
+      .input__box
+        span.details
+          label(for='nin')  NIN
+        input#nin(type='text' name='nin')
+        span#nin-error
+      .input__box
+        span.details
+          label(for='contact')  Phone contact
+        input#contact(type='tel' name='contact')
+        span#contact-error
+        
+      .input__box
+        span.details
+          label(for='battery') Battery size
+        input#battery(type='text' name='battery')
+        span#battery-error
+
+      .input__box
+        span.details
+          label(for='amount') Amount
+        input#amount(type='number' name='amount')
+        span#amount-error
+
+      .input__box
+        span.details
+          label(for='date')
+          | Date
+        input#date(type='date' name='date')
+        span#date-error
+      .input__box
+        span.details
+          label(for='time')  Time of arrival
+        input#time(type='time' name='time')
+        span#time-error
+    .button
+      input(type='submit' value='Register')
+script(src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js' integrity='sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r' crossorigin='anonymous')
+script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js' integrity='sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS' crossorigin='anonymous')
+script(src='/js/battery.js')

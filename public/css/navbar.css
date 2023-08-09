@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+body{
+    background-color: plum !important;
+}
+
+ .navbar{
+    background-color: white !important;
+}
+
+ .top-nav a{
+    color: purple !important;
+    margin-left: 40px;
+    
+}
+.top-nav a:hover{
+    color: black !important;
+}
+.top-nav:hover li a:not(:hover){
+    opacity: 0.3;
+  } 
+.top-nav .nav-center{
+    font-size: 25px !important;
+    margin-left: 400px;
+    
+}
+.navbar-brand{
+    font-size: 35px !important;
+    color:purple;
+    margin-left: 30px;
+    
+}
+.navbar-brand:hover{
+    color:purple !important;
+} 
+
+.user-image img{
+    width: 50px;
+    margin-right: 100px;
+    /* margin-left: 300px; */
+    
+  }
+  .dropdown-toggle::after {
+    display: none; 
+}
+.top-nav .nav-center a{
+    padding: 0px 0px;
+}
+
+/* this is css for the second option */
+.btn-secondary{
+    padding: 0px;
+}
+.user-btn{
+    border: none !important;
+}
+
+/* fixed position for navr narbar*/
+/* .container-fluid .nav-bar { */
+    /* position: fixed; */
+/* } */

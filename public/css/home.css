@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    font-style: white;
+
+}
+.home-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.home-container.card-h-100{
+    width: 20px;
+    height: 15px;
+}
+ 
+/* body{
+    background-image: url("/public/images/logo.PNG");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no repeat;
+    background-size: cover;
+    object-fit: contain;
+
+} */
+
+.logo{
+    background-image:url("/images/dockville.png"); 
+    width: 500px;
+     height: 500px; 
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+    margin: 100px auto;
+}
+ body{
+     background: linear-gradient(-135deg, var(--main-blue), var(--main-purple)); 
+}
+:root {
+    --main-blue: #71b7e6;
+    --main-purple: #9b59b6;
+    --main-grey: #ccc;
+    --sub-grey: #d9d9d9;
+  } 
+
+  
+    .menu{
+        margin-top: 30px;
+    
+    } 
+    
+  

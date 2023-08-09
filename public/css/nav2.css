@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+}
+/* new adjustments */
+header{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  background-color:white;
+  float: right;
+  text-decoration: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  height: 10vh;
+  align-items: center;
+  margin-top: 50px auto;
+    
+}
+/* image for the user icon */
+.user-image img{
+  width: 45px;
+  margin-right: 100px;
+}
+
+ /* .navcontainer{
+    display: flex;
+    padding: 20px;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}  */
+
+.navcontainer li{
+    margin:  25px;
+}
+
+.navcontainer li a{
+    font-size: 22px;
+    text-decoration: none;
+    transition: 0.3s;
+   
+    
+}
+
+.navcontainer:hover li a{
+    color: #000;
+   
+}
+.navcontainer:hover li a:not(:hover){
+  color: #000;
+  opacity: 0.3;
+} 
+  
+
+.menu ul li{
+    display: inline-block;
+   
+
+  }
+  .menu ul li a.hover{
+    color: rgb(199, 139, 255);
+  }
+  .menu ul li a{
+    color: purple;
+    padding:5px 20px;
+    font-size: px;
+
+  }
+  /* new changes */
+.navbar{
+  padding: 10px 0;
+}
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.links{
+  justify-content: end;
+}
+h2{
+  color: purple;
+ margin-left: 50px;
+}
+
+/* hiding the screen that should open and close the nav container on small screens. */
+.navcontainer .icon{
+  display: none;
+}
+/* i'll tell you if it works */
+@media screen and (max-width: 600px) {
+  .navcontainer a:not(:first-child) {display: none;}
+  .navcontainer a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navcontainer.responsive {position: relative;}
+  .navcontainer.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .navcontainer.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+/* this applies for the popup buttons */
+.settings-btn{
+  margin-top: 250px;
+  position: relative;
+}
