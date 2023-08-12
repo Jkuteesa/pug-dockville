@@ -34,6 +34,7 @@ router.get("/batterylist", async(req, res) =>{
 
 
          ])
+         //rendering variables to the batterylist
         res.render("batterylist.pug",
         {clients:items, parkingCount, totalAmount:amount[0].totalamount });
     }catch(error){
@@ -44,39 +45,39 @@ router.get("/batterylist", async(req, res) =>{
 })
 
 // // when deleting a Client from database
-// router.post("/client/delete", async (req, res) =>{
-//     try{
-//         await Client.deleteOne({_id: req.body.id});
-//         res.redirect("back");
+router.post("/client/delete", async (req, res) =>{
+    try{
+        await Client.deleteOne({_id: req.body.id});
+        res.redirect("back");
 
-//     }catch(error){
-//         res.status(400).send("unable to delete item from the database.");
-//     }
-// })
+    }catch(error){
+        res.status(400).send("unable to delete item from the database.");
+    }
+})
 
 // // editing/updating data
 
-// router.get("/client/edit/:id", async(req, res)=>{
-//     try{
-//         const emp = await Client.findOne({
-//             _id:req.params.id
-//         })
-//         res.render("clientedit", {client:emp});
-//     }
-//     catch(error){
-//         res.status(400).send("Could not find battery client in database.");
-//         console.log(error)
-//     }
-// })
-// router.post("/client/edit", async (req, res) => {
-//     try{
-//         await Client.findOneAndUpdate({_id: req.query.id},req.body);
-//         res.redirect("/api/batterylist")
-//     }catch(error){
-//         res.status(400).send("Could not edit client data.")
-//         console.log(error);
-//     }
-// })
+router.get("/client/edit/:id", async(req, res)=>{
+    try{
+        const customer = await Client.findOne({
+            _id:req.params.id
+        })
+        res.render("battery2edit", {client:customer});
+    }
+    catch(error){
+        res.status(400).send("Could not find battery client in database.");
+        console.log(error)
+    }
+})
+router.post("/client/edit", async (req, res) => {
+    try{
+        await Client.findOneAndUpdate({_id: req.query.id},req.body);
+        res.redirect("/api/batterylist")
+    }catch(error){
+        res.status(400).send("Could not edit client data.")
+        console.log(error);
+    }
+})
 
 
 

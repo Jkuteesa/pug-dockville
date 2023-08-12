@@ -17,6 +17,10 @@ const ParkingSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    cartype:{
+        type: String,
+        required: true,
+    },
     carmodel:{
         type: String,
         required: true

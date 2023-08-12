@@ -8,7 +8,7 @@ const connectDB = require("./config/dbConfig");
 const port = process.env.PORT || 4000;
 const app =express();
 
-// const Signup = require(./)
+const Signup = require("./models/signupModel")
 // importing indexRoutes which we exported in index pug
 const indexRoutes = require("./controllers/indexRoutes")
 const homeRoutes = require("./controllers/homeRoutes")
@@ -17,6 +17,12 @@ const battery2Routes = require("./controllers/battery2Routes")
 const tires2Routes = require("./controllers/tiresRoutes")
 const signupRoutes = require("./controllers/signupRoutes")
 
+// this is importing the express session an using it directly to pass parameters.
+const expressSession = require("express-session")({
+    secret: "secret", 
+    resave: false,
+    saveUnitialized: false
+})
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
@@ -27,6 +33,16 @@ connectDB();
 app.engine("pug", require("pug").__express);
 app.set("view engine","pug");
 app.set("views", path.join(__dirname, "views"));
+
+app.use(expressSession);
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+passport.use(Signup.createStrategy());
+passport.serializeUser(Signup.serializeUser());
+passport.deserializeUser(Signup.deserializeUser());
+
 
 //setting up directory for static files
 // __dirname means starting from the root folder called public
@@ -47,5 +63,5 @@ app.use("/api", signupRoutes)
 
 // running the server on a specific port(3000)
 // this should always be the last line in the server file
-app.listen(3000, () =>console.log("listening on port 3000"));
+app.listen(port, () =>console.log(`listening on port 3000`));
 // this is a call back

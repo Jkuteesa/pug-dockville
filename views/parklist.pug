@@ -18,13 +18,14 @@ table.table()
         th(scope='col') Lastname
         th(scope='col') NIN  
         th(scope='col') Phone contact 
+        th(scope='col') Cartype 
         th(scope='col') Vehicle model   
         th(scope='col') Number plate
         th(scope='col') Period
         th(scope='col') Date 
         th(scope='col') Time of arrival
         th(scope='col') Time of departure
-        th(scope='col') Delete
+        th(scope='col') Sign off
         th(scope='col') Edit 
     tbody
     if parks.length 
@@ -34,6 +35,7 @@ table.table()
                 td #{park.lname}
                 td #{park.nin}
                 td #{park.contact}
+                td #{park.cartype}
                 td #{park.carmodel}
                 td #{park.nplate}
                 td #{park.period}
@@ -45,7 +47,7 @@ table.table()
                 td 
                     form(action="/api/park/delete" method="POST") 
                         input(type="hidden" name="id" value=park._id)
-                        button.btn.btn-danger(type="submit") Delete 
+                        button.btn.btn-danger(type="submit") Sign off  
                 td  
                     a.btn.btn-warning(href="/api/park/edit/"+park ._id) Edit
                     //- a(href=`/api/park/edit/${employee._id}`) 

@@ -299,3 +299,12 @@ const Validate=(event )=>{
 
  }
 
+
+// document.addEventListener('DOMContentLoaded', function() {
+const button = document.querySelector('#revenue button[type="button"]');
+const form = document.getElementById('revenue');
+
+button.addEventListener('click', function() {
+    form.submit();
+});
+

@@ -60,93 +60,78 @@ header(style='position: absolute; top: 0px; width: 100%;')
             button.btn.btn-secondary(type='button' data-bs-dismiss='modal') Close
             button.btn.btn-primary(type='button') Confirm changes
     // popup for reset password ends here.
-// navbar ends here
+// navbar ends here 
 .container
   .title Car Tire Clinic
-  form#form.my-form(method='POST' name='form' action="/api/tires/edit?id='+tires._id " onsubmit='return Validate(event)')
+  form#form.my-form(method='POST' name='form' action='/api/tire/edit?id='+tire._id  onsubmit='return Validate(event)')
     .user__details
       .input__box
         span.details
           label(for='fname')  First Name
-        input#fname(type='text' name='fname')
+        input#fname(type='text' name='fname' value=tire.fname)
         span#fname-error
         
       .input__box
         span.details
           label(for='lname') Last Name
-        input#lname(type='text' name='lname')
+        input#lname(type='text' name='lname' value=tire.lname)
         span#lname-error
       .input__box
         span.details
           label(for='gender') Gender 
-        select#gender(name='gender')
+        select#gender(name='gender' value=tire.gender)
           option(selected='') 
-          option(value='Female') Female
-          option(value='Male') Male
+          option(value='Female'  selected=tire.gender==='Female') Female
+          option(value='Male'  selected=tire.gender==='Male') Male
         span#gender-error
       .input__box
         span.details
           label(for='contact')  Phone Contact
-        input#contact(type='tel' name='contact')
-        span#contact-error
+        input#contact(type='tel' name='contact' value=tire.contact)
+        span#contact-error 
       .input__box
         span.details
           label(for='carmodel') Vehicle Model
-        input#carmodel(type='text' name='carmodel')
+        input#carmodel(type='text' name='carmodel' value=tire.carmodel)
         span#carmodel-error
       .input__box
         span.details
           label(for='tiremake')  Tire make 
-        input#tiremake(type='text' name='tiremake')
+        input#tiremake(type='text' name='tiremake' value=tire.tiremake)
         span#tiremake-error
       .input__box
         span.details
           label(for='tiresize')  Tire Size
-        input#tiresize(type='text' name='tiresize')
+        input#tiresize(type='text' name='tiresize' value=tire.tiresize)
         span#tiresize-error
-      .input__box
+      .input__box 
         span.details
           label(for='amount') Amount
-        select#amount(input='' type='text' name='amount')
+        select#amount(input='' type='text' name='amount' value=tire.amount)
           option(value='')
-          option(value='20000') 20000
-          option(value='10000') 10000 
-          option(value='15000') 15000 
+          option(value='20000' selected=tire.amount===20000) 20000
+          option(value='10000' selected=tire.amount===10000) 10000 
+          option(value='15000' selected=tire.amount===15000) 15000 
         span#amount-error
 
       .input__box
         span.details
-          label(for='carTireServices') Tire services
-        select#carTireServices(input='' type='text' name='carTireServices')
+          label(for='carTireServices' ) Tire services
+        select#carTireServices(input='' type='text' name='carTireServices' value=tire.carTireServices)
           option(value='')
-          option(value='tirepressure') Tire pressure 
-          option(value='puncturefixing') Puncture fixing 
-          option(value='valves') Valves 
+          option(value='tirepressure' selected=tire.carTireServices==='tirepressure') Tire pressure 
+          option(value='puncturefixing' selected=tire.carTireServices==='pressurefixing') Puncture fixing 
+          option(value='valves' selected=tire.carTireServices==='valves') Valves 
         span#carTireServices-error   
       .input__box
         span.details
-          label(for='amount') Amount
-        select#amount(input='' type='text' name='cartype')
-          option(value='')
-          option(value='500') 500 
-          option(value='5000') 5000 
-          option(value='5000') 5000 
-        span#cartype-error     
-    .services__details
-      span.services__title Tire services
-      .category.tire-services
-        label(for='checkbox-1')
-          span.checkbox
-          input#checkbox-1(type='checkbox' name='services' value='tire-pressure')
-          span Tire pressure
-        label(for='checkbox-2')
-          span.checkbox
-          input#checkbox-2(type='checkbox' name='services' value='valve-fixing')
-          span Valve fixing
-        label(for='checkbox-3')
-          span.checkbox
-          input#checkbox-3(type='checkbox' name='services' value='puncture-fixing')
-          span Puncture fixing
+          label(for='amountt') Amount
+        select#amount(input='' type='text' name='amountt' value=tire.amountt)
+          option(value='' disabled) 
+          option(value='500' selected=tire.amountt===500) 500
+          option(value='5000' selected=tire.amountt===5000) 5000
+          option(value='5000' selected=tire.amountt===5000) 5000
+        span#amountt-error     
     .button
       input(type='submit' value='Register')
 script(src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js' integrity='sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r' crossorigin='anonymous')

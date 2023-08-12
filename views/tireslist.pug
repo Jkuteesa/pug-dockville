@@ -24,7 +24,7 @@ table.table()
         th(scope='col') Amount 
         th(scope='col') Tire services
         th(scope='col') Amount
-        th(scope='col') Delete
+        th(scope='col') Sign off
         th(scope='col') Edit 
     tbody
     if tires.length 
@@ -45,9 +45,9 @@ table.table()
                 td 
                     form(action="/api/tire/delete" method="POST") 
                         input(type="hidden" name="id" value=tire._id)
-                        button.btn.btn-danger(type="submit") Delete 
+                        button.btn.btn-danger(type="submit") Sign off 
                 td  
-                    a.btn.btn-warning(href="/api/tire/edit/"+tire ._id) Edit
+                    a.btn.btn-warning(href="/api/tire/edit/"+tire._id) Edit
                     //- a(href=`/api/tire/edit/${employee._id}`) 
 
     else 

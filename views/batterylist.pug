@@ -23,7 +23,7 @@ table.table()
         th(scope='col') Date
         th(scope='col') Time of arrival  
         th(scope='col') Amount
-        th(scope='col') Delete
+        th(scope='col') Sign off
         th(scope='col') Edit 
     tbody
     if clients.length 
@@ -39,13 +39,13 @@ table.table()
                 td #{client.time}
                 td #{client.amount}
                 
-                //- td 
-                //-     form(action="/api/battery2/delete" method="POST") 
-                //-         input(type="hidden" name="id" value=battery2._id)
-                //-         button.btn.btn-danger(type="submit") Delete 
-                //- td  
-                //-     a.btn.btn-warning(href="/api/battery2/edit/"+battery2 ._id) Edit
-                //-     a(href=`/api/battery2/edit/${employee._id}`) 
+                td 
+                    form(action="/api/client/delete" method="POST") 
+                        input(type="hidden" name="id" value=client._id)
+                        button.btn.btn-danger(type="submit") Sign off  
+                td  
+                    a.btn.btn-warning(href="/api/client/edit/"+client ._id) Edit
+                  
 
     else 
         P There are no employees in the database.

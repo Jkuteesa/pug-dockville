@@ -17,7 +17,7 @@ header(style='position: absolute; top: 0px; width: 100%;')
         #navbarSupportedContent.collapse.navbar-collapse.nav-center
           ul.navbar-nav.me-auto.mb-2.mb-lg-0
             li.nav-item
-              a.nav-link(href='home') Home
+              a.nav-link(href='home') Home 
             li.nav-item
               a.nav-link(href='park') Parking 
             li.nav-item
@@ -46,7 +46,7 @@ header(style='position: absolute; top: 0px; width: 100%;')
             h1#exampleModalLabel.modal-title.fs-5 Reset password
             button.btn-close(type='button' data-bs-dismiss='modal' aria-label='Close')
           .modal-body
-            form
+            form 
               .mb-3
                 label.col-form-label(for='recipient-name') Enter email:
                 input#recipient-name.form-control(type='text')
@@ -63,59 +63,59 @@ header(style='position: absolute; top: 0px; width: 100%;')
 // navbar ends here
 .container(style='margin-top: 85px;')
   .title Battery form
-  form#formid(name='registration' action='api/client/edit?id=+'battery2._id onsubmit='return Validate(event)' method='POST')
+  form#formid(name='registration' method='POST' action='api/client/edit?id='+client._id onsubmit='return Validate(event)')
     .user__details
       .input__box
         span.details
           label(for='fname')  First Name
-        input#fname(type='text' name='fname')
+        input#fname(type='text' name='fname' value=client.fname)
         span#fname-error
       .input__box
         span.details
           label(for='lname')  Last Name
-        input#lname(type='text' name='lname')
+        input#lname(type='text' name='lname' value=client.lname)
         span#lname-error
       .input__box
         span.details
           label(for='gender') Gender 
-        select#gender(name='gender')
+        select#gender(name='gender' value=client.gender)
           option(selected='') 
-          option(value='Female') Female
-          option(value='Male') Male
+          option(value='Female' selected=client.gender==='Female') Female
+          option(value='Male' selected=client.gender==='Male') Male
         span#gender-error
       .input__box
         span.details
           label(for='nin')  NIN
-        input#nin(type='text' name='nin')
+        input#nin(type='text' name='nin' value=client.nin)
         span#nin-error
       .input__box
         span.details
           label(for='contact')  Phone contact
-        input#contact(type='tel' name='contact')
+        input#contact(type='tel' name='contact' value=client.contact)
         span#contact-error
         
       .input__box
         span.details
           label(for='battery') Battery size
-        input#battery(type='text' name='battery')
+        input#battery(type='text' name='battery' value=client.battery)
         span#battery-error
 
       .input__box
         span.details
           label(for='amount') Amount
-        input#amount(type='number' name='amount')
+        input#amount(type='number' name='amount' value=client.amount)
         span#amount-error
 
       .input__box
         span.details
           label(for='date')
           | Date
-        input#date(type='date' name='date')
+        input#date(type='date' name='date' value=client.date)
         span#date-error
       .input__box
         span.details
           label(for='time')  Time of arrival
-        input#time(type='time' name='time')
+        input#time(type='time' name='time' value=client.time)
         span#time-error
     .button
       input(type='submit' value='Register')

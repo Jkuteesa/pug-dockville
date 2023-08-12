@@ -31,10 +31,10 @@ router.get("/tireslist", async(req, res) =>{
             {'$group': {_id: '$all',
         totalamount: {$sum: '$amount'}
     }}
-     //let ages =group{totalAge{sum}}
+
         ])
           
-       // this is passing/ rendering variables to the park list
+       // this is passing/ rendering variables to the tireslist
         res.render("tireslist.pug",
          {tires:items, parkingCount, totalAmount:amount[0].totalamount });
     }
@@ -45,13 +45,25 @@ router.get("/tireslist", async(req, res) =>{
     }
 })
 
+// when deleting an tire from the database.
+router.post("/tire/delete", async (req, res)=>{
+    try{
+        await Tire.deleteOne({_id: req.body.id});
+        res.redirect("back");
+    }
+    catch(error){
+        res.status(400).send("unable to delete item from the database");
+    }
+})    
+
+
 // updating the tire clients
-router.get("/tires/edit/:id", async(req, res) => {
+router.get("/tire/edit/:id", async(req, res) => {
     try{
         const tire = await Tire.findOne({
             _id:req.params.id
         })
-        res.render("tireedit",{tire:tire});
+        res.render("tiresedit",{tire:tire});
 
     }catch(error){
         res.status(400).send("Could not find client in database");

@@ -43,6 +43,11 @@ body {
 	text-decoration: none;
 }
 
+select{
+	width: 100%;
+	border: none;
+	color: gray;
+}
 .container {
 	background-color: var(--white);
 	border-radius: var(--button-radius);

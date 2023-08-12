@@ -30,7 +30,7 @@ header(style='position: absolute; top: 0px; width: 100%;')
                 img(src='/images/user-image.jpg' alt='')
             ul.dropdown-menu
               li
-                form(action='#' method='POST')
+                form#revenue(action='/api/parklist' method='POST')
                   button.dropdown-item(type='button') Revenue data
               li
                 form(action='#' method='POST')
@@ -62,7 +62,7 @@ header(style='position: absolute; top: 0px; width: 100%;')
     // popup for reset password ends here.
 .container
   .title Parking form
-  form#formid(name='parkform' action='/api/park' onsubmit='return Validate(event)' method='POST')
+  form#formid(name='registration' action='/api/park' onsubmit='return Validate(event)' method='POST')
     .user__details
       .input__box
         span.details
@@ -90,11 +90,11 @@ header(style='position: absolute; top: 0px; width: 100%;')
           label(for='cartype') Car type
         select#cartype(input='' type='text' name='cartype')
           option(value='')
-          option(value='Day') Truck 
-          option(value='Day') Personal car 
-          option(value='Day') Taxi 
-          option(value='Day') Coaster
-          option(value='Day') Boda-boda
+          option(value='Truck') Truck 
+          option(value='Personal car') Personal car 
+          option(value='Taxi') Taxi 
+          option(value='Coaster') Coaster
+          option(value='Boda-boda') Boda-boda
         span#cartype-error
       .input__box
         span.details

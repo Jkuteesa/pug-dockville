@@ -67,79 +67,79 @@ header(style='position: absolute; top: 0px; width: 100%;')
       .input__box
         span.details
           label(for='fname') First Name
-        input#fname(type='text' name='fname')
+        input#fname(type='text' name='fname'  value=park.fname)
         span#fname-error
       .input__box
         span.details
           label(for='lname')  Last Name 
-        input#lname(type='text' name='lname')
+        input#lname(type='text' name='lname' value=park.lname)
         span#lname-error
       .input__box
         span.details
           label(for='nin') NIN
-        input#nin(type='text' name='nin')
+        input#nin(type='text' name='nin' value=park.nin)
         span#nin-error
       .input__box
         span.details
           label(for='contact') Phone contact
-        input#contact(type='tel' name='contact')
+        input#contact(type='tel' name='contact' value=park.contact)
         span#contact-error
       .input__box
         span.details
           label(for='cartype') Car type
-        select#cartype(input='' type='text' name='cartype')
+        select#cartype(input='' type='text' name='cartype' value=park.cartype)
           option(value='')
-          option(value='Day') Truck 
-          option(value='Day') Personal car 
-          option(value='Day') Taxi 
-          option(value='Day') Coaster
-          option(value='Day') Boda-boda
+          option(value='Truck' selected=park.cartype==='Truck') Truck 
+          option(value='Personal car' selected=park.cartype==='Personal car') Personal car 
+          option(value='Taxi' selected=park.cartype==='Taxi') Taxi 
+          option(value='Coaster' selected=park.cartype==='Coaster') Coaster
+          option(value='Boda-boda' selected=park.cartype==='Boda-boda') Boda-boda
         span#cartype-error
-      .input__box
+      .input__box 
         span.details
           label(for='carmodel') vehicle model
-        input#carmodel(type='text' name='carmodel')
+        input#carmodel(type='text' name='carmodel' value=park.carmodel)
         span#carmodel-error
       .input__box
         span.details 
           label(for='nplate') Number plate
-        input#nplate(type='text' name='nplate')
+        input#nplate(type='text' name='nplate' value=park.nplate)
         span#nplate-error
       .input__box
         span.details
           label(for='period') Period
-        select#period(input='' type='text' name='period')
+        select#period(input='' type='text' name='period' value=park.period)
           option(value='')
-          option(value='Day') Day
-          option(value='Night') Night
-          option(value='Less') Not more than 3 hours
+          option(value='Day' selected=park.period==='Day') Day
+          option(value='Night' selected=park.period==='Night') Night
+          option(value='Less' selected=park.period==='Not more than 3 hours') Not more than 3 hours
         span#period-error
       .input__box
         span.details
           label(for='amount') Amount 
-        select#amount(name='amount')
+        select#amount(name='amount' value=park.amount)
           option(selected='') Amount
-          option(value='2000') 2000
-          option(value='3000') 3000
-          option(value='5000') 5000
-          option(value='4000') 4000          
-          option(value='2000') 2000
-          option(value='1000') 1000          
+          option(value='2000' selected=park.amount===2000) 2000
+          option(value='3000' selected=park.amount===3000) 3000
+          option(value='5000' selected=park.amount===5000) 5000
+          option(value='4000' selected=park.amount===4000) 4000          
+          option(value='2000' selected=park.amount===2000) 2000
+          option(value='1000' selected=park.amount===1000) 1000          
         span#amount-error
       .input__box
         span.details
           label(for='date')  Date
-        input#date(type='date' name='date')
+        input#date(type='date' name='date' value=park.date)
         span#date-error
       .input__box
         span.details
           label(for='timein') Time of arrival
-        input#timein(type='time' name='timein')
+        input#timein(type='time' name='timein' value=park.timein)
         span#timein-error
       .input__box
         span.details
           label(for='timeout')  Time of departure
-        input#timeout(type='time' name='timeout')
+        input#timeout(type='time' name='timeout' value=park.timeout)
 
     .button
       input(type='submit' value='Register')
