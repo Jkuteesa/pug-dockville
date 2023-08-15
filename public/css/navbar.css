@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
 
-body{
-    background-color: plum !important;
-}
+/* body{
+    /* background-color: plum !important; 
+} */
 
  .navbar{
     background-color: white !important;
@@ -33,6 +33,7 @@ body{
 .navbar-brand:hover{
     color:purple !important;
 } 
+
 
 .user-image img{
     width: 50px;

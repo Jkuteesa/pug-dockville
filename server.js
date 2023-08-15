@@ -16,6 +16,7 @@ const parkRoutes = require("./controllers/parkRoutes")
 const battery2Routes = require("./controllers/battery2Routes")
 const tires2Routes = require("./controllers/tiresRoutes")
 const signupRoutes = require("./controllers/signupRoutes")
+const dashboardRoutes = require("./controllers/dashboardRoutes")
 
 // this is importing the express session an using it directly to pass parameters.
 const expressSession = require("express-session")({
@@ -56,6 +57,7 @@ app.use("/api", parkRoutes)
 app.use("/api", battery2Routes)
 app.use("/api", tires2Routes)
 app.use("/api", signupRoutes)
+app.use("/api", dashboardRoutes)
 
 
 

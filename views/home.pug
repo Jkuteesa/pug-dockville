@@ -32,7 +32,7 @@ header
                 form(action='#' method='POST')
                   button.dropdown-item(type='button') Revenue data
               li
-                form(action='#' method='POST')
+                form(action='/logout' method='POST')
                   button.dropdown-item(type='button') Want to log out
               // <li><button class="dropdown-item" type="button"><button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Reset password</button></button></li>
               li
@@ -60,5 +60,52 @@ header
             button.btn.btn-primary(type='button') Confirm changes
     // popup for reset password ends here.
 .logo(style='background-image: url(/images/dockville.png);')
+section
+  .container
+    .card
+      .content
+        .imgBx
+          img(src="/images/carparkx.jpg")
+        .contentBx
+          h3
+            | Parking 
+            br
+            span section 
+      ul.sci
+        li
+          a(href='parklist') parking 
+        
+       
+    .card
+      .content
+        .imgBx
+          img(src="/images/engine.jpg")
+        .contentBx
+          h3
+            | Battery 
+            br
+            span section 
+      ul.sci
+        li
+          a(href='batterylist') Battery
+        
+    .card
+      .content
+        .imgBx
+          img(src="/images/homepage.webp")
+        .contentBx
+          h3
+            | Tires
+            br
+            span section 
+      ul.sci
+        li
+          a(href='tireslist') Tires
+       
+
 script(src='/js/form2.js')
 script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js' integrity='sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz' crossorigin='anonymous')
+
+
+
+

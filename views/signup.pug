@@ -22,7 +22,7 @@ head
       button#btnSignin.btn(type='submit')  Sign Up
   // Sign In
   .container__form.container--signin
-    form#form2.form(action='/api/login')
+    form#form2.form(action='/api/login' name='login' method='POST' onsubmit='return validate(event)')
       h2.form__title Sign In
       input.input(type='email' placeholder='Email')
       input.input(type='password' placeholder='Password')
