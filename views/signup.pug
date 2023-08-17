@@ -24,8 +24,8 @@ head
   .container__form.container--signin
     form#form2.form(action='/api/login' name='login' method='POST' onsubmit='return validate(event)')
       h2.form__title Sign In
-      input.input(type='email' placeholder='Email')
-      input.input(type='password' placeholder='Password')
+      input.input(type='email' placeholder='Email' name='email')
+      input.input(type='password' placeholder='Password' name='password')
       a.link(href='#') Forgot your password?
       button#btnSignin.btn(type='submit') Sign In
   // Overlay

@@ -30,11 +30,11 @@ header(style='position: absolute; top: 0px; width: 100%;')
                 img(src='/images/user-image.jpg' alt='')
             ul.dropdown-menu
               li
-                form#revenue(action='/api/parklist' method='POST')
-                  button.dropdown-item(type='button') Revenue data
+                form#revenue(action='/api/parklist' method='GET')
+                  button.dropdown-item(type='submit') Revenue data 
               li
-                form(action='#' method='POST')
-                  button.dropdown-item(type='button') Want to log out
+                form(action='/api/logout' method='GET')
+                  button.dropdown-item(type='submit') Want to log out
               // <li><button class="dropdown-item" type="button"><button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Reset password</button></button></li>
               li
                 button.dropdown-item(type='button' data-bs-toggle='modal' data-bs-target='#exampleModal') Reset password

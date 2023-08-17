@@ -26,43 +26,34 @@ router.get("/login", (req, res) => {
   res.render("signup.pug");
 });
 
-// router.post(
-//   "/login",
-//   passport.authenticate("local", { failureRedirect: "/api/login" }),
-//   (req, res) => {
-//     console.log("login")
-//     req.session(req.user, (err) => {
-//       if (err) {
-//         return res.status(400).send({ message: "failed to log in" });
-//       }
 
-//       res.redirect("/home"); // Redirect to the home page
-//     });
-//   }
-// );
 
 router.post(
   "/login",
   passport.authenticate("local", { failureRedirect: "/api/login" }),
   (req, res) => {
+   try{
     req.session.user = req.user;
     let loggedinUser = req.session.user.email;
-    console.log(req.session.user.manager);
+    console.log(req.session.user);
     //  console.log(loggedinUser)
 
     console.log(req.body);
     console.log(req.session.user.manager);
     //  these lead to the dashboards of the user
     if (req.session.user.manager === "parking") {
-      res.render("parking.pug", { loggedinUser });
-      res.render("parking.pug");
+      // res.render("park.pug", { loggedinUser });
+      res.render("home.pug");
     } else if (req.session.user.manager === "battery") {
-      res.render("battery.pug");
+      res.render("home.pug");
     } else if (req.session.user.manager === "tires") {
-      res.render("tires.pug");
+      res.render("home.pug");
     } else {
       res.send("not route user");
-    }
+    } 
+   }catch(error){
+   res.status(400).send("could not login user")
+   }
   }
 );
 
@@ -71,7 +62,7 @@ router.get("/logout", (req, res) => {
   req.session.destroy(() => {
     res.redirect("/api/login");
   })
-  console.log("you've bbeen logged out")
+  console.log("you've been logged out")
 });
 
 module.exports = router;

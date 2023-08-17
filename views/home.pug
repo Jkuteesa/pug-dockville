@@ -28,12 +28,12 @@ header
               .user-image
                 img(src='/images/user-image.jpg' alt='')
             ul.dropdown-menu
+              //- li
+              //-   form(action='#' method='POST')
+              //-     button.dropdown-item(type='button') Revenue data
               li
-                form(action='#' method='POST')
-                  button.dropdown-item(type='button') Revenue data
-              li
-                form(action='/logout' method='POST')
-                  button.dropdown-item(type='button') Want to log out
+                form(action='/api/logout' method='GET')
+                  button.dropdown-item(type='submit') Want to log out
               // <li><button class="dropdown-item" type="button"><button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Reset password</button></button></li>
               li
                 button.dropdown-item(type='button' data-bs-toggle='modal' data-bs-target='#exampleModal') Reset password
@@ -61,7 +61,7 @@ header
     // popup for reset password ends here.
 .logo(style='background-image: url(/images/dockville.png);')
 section
-  .container
+  .container 
     .card
       .content
         .imgBx
@@ -92,7 +92,7 @@ section
     .card
       .content
         .imgBx
-          img(src="/images/homepage.webp")
+          img(src="/images/tiresx.jpg")
         .contentBx
           h3
             | Tires
