@@ -41,7 +41,7 @@ router.post(
     console.log(req.body);
     console.log(req.session.user.manager);
     //  these lead to the dashboards of the user
-    if (req.session.user.manager === "parking") {
+    if (req.session.user.manager === "park") {
       // res.render("park.pug", { loggedinUser });
       res.render("home.pug");
     } else if (req.session.user.manager === "battery") {

@@ -10,14 +10,17 @@ signInBtn.addEventListener("click", () => {
 	container.classList.remove("right-panel-active");
 });
 
-// signUpBtn.addEventListener("click", () => {
-// 	container.classList.add("right-panel-active");
+signUpBtn.addEventListener("click", () => {
+	container.classList.add("right-panel-active");
+});
+
+fistForm.addEventListener("submit", (e) => e.preventDefault());
+secondForm.addEventListener("submit", (e) => e.preventDefault());
+
+
+
+// const logInRedirect = document.getElementById("btnSignin")
+// logInRedirect.addEventListener("click", () => {
+// 	window.location.href = "./home";
 // });
 
-// fistForm.addEventListener("submit", (e) => e.preventDefault());
-// secondForm.addEventListener("submit", (e) => e.preventDefault());
-
-const logInRedirect = document.getElementById("btnSignin")
-logInRedirect.addEventListener("click", () => {
-	window.location.href = "./home";
-});

@@ -6,26 +6,30 @@ head
   link(rel='stylesheet' href='/css/singin.css')
 .container.right-panel-active 
   .container__form.container--signup
-    form#form1.form(action='/api/register' method='POST') 
+    form#form1.form(action='/api/register' method='POST' name='signup' onsubmit='return ValidateSignup(event)') 
       h2#btnSignup.form__title Sign Up
       .input.input(type='text') 
         span.details 
           //- label(for='manager') manager 
-        select#manager(input='' type='text' name='manager' )
-          option(value='' disabled selected) manager
+        select#manager( name='manager')
+          option(value='' disabled selected) manager 
           option(value='parking') Parking manager 
           option(value='battery') Battery manager 
           option(value='tires') Tires manager 
         span#manager-error 
-      input.input(type='email' name='email' placeholder='Email') 
-      input.input(type='password' name='password' placeholder='Password')
+      input#email.input(type='email' name='email' placeholder='Email') 
+      span#email-error
+      input#password.input(type='password' name='password' placeholder='Password')
+      span#password-error
       button#btnSignin.btn(type='submit')  Sign Up
   // Sign In
   .container__form.container--signin
-    form#form2.form(action='/api/login' name='login' method='POST' onsubmit='return validate(event)')
+    form#form2.form(action='/api/login' name='login' method='POST' onsubmit='return ValidateSignin(event)')
       h2.form__title Sign In
-      input.input(type='email' placeholder='Email' name='email')
-      input.input(type='password' placeholder='Password' name='password')
+      input#emailSignin.input(type='email' placeholder='Email' name='email')
+      span#emailSignin-error 
+      input#passwordSignin.input(type='password' placeholder='Password' name='password')
+      span#passwordSignin-error
       a.link(href='#') Forgot your password?
       button#btnSignin.btn(type='submit') Sign In
   // Overlay
@@ -36,3 +40,4 @@ head
       .overlay__panel.overlay--right 
         button#signUp.btn Sign Up
 script(src='/js/signin.js')
+script(src='/js/signup.js')
