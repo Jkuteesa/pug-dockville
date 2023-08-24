@@ -9,7 +9,7 @@ router.get("/signup", (req, res) => {
 });
 
 // this is the first post
-router.post("/register", async (req, res) => {
+router.post("/registers", async (req, res) => {
   try {
     const user = new Signup(req.body);
     console.log(req.body);

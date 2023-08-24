@@ -171,7 +171,7 @@ select{
 	transition: transform 80ms ease-in;
 }
 
-#btnSignin{
+#btnSignin, #btnSignup{
 	background-color: #0367a6;
 
 }

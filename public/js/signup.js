@@ -7,13 +7,15 @@ const ValidateSignup = (event) => {
   let managerError = document.getElementById("manager-error");
   let emailError = document.getElementById("email-error");
   let passwordError = document.getElementById("password-error");
+  console.log('error', error);
 
   if (manager.value == "") {
     manager.style.border = "2px solid red";
     managerError.textContent = "manager is required";
     managerError.style = "color:red; font-family:serif";
+    error += 1
     manager.focus();
-    error++;
+   
   } else {
     manager.style.border = "2px solid green";
     managerError.textContent = "";
@@ -21,11 +23,14 @@ const ValidateSignup = (event) => {
   }
 
   if (email.value == "") {
+    console.log(error += 1)
     email.style.border = "2px solid red";
     emailError.textContent = "Email is required";
     emailError.style = "color:red; font-family:serif";
+    error += 1;
+
     email.focus();
-    error++;
+   
   } else {
     email.style.border = "2px solid green";
     emailError.textContent = "";
@@ -36,8 +41,9 @@ const ValidateSignup = (event) => {
     password.style.border = "2px solid red";
     passwordError.textContent = "password is required";
     passwordError.style = "color:red; font-family:serif";
+   error += 1;
     password.focus();
-    error++;
+  
   } else {
     password.style.border = "2px solid green";
     passwordError.textContent = "";
@@ -48,6 +54,7 @@ const ValidateSignup = (event) => {
     event.preventDefault();
   }
 };
+
 
 // validations for the signin form.
 const ValidateSignin = (event) => {
@@ -62,8 +69,9 @@ const ValidateSignin = (event) => {
     email.style.border = "2px solid red";
     emailError.textContent = "Email is required";
     emailError.style = "color:red; font-family:serif";
+   error += 1;
     email.focus();
-    error++;
+  
   } else {
     email.style.border = "2px solid green";
     emailError.textContent = "";
@@ -74,8 +82,9 @@ const ValidateSignin = (event) => {
     password.style.border = "2px solid red";
     passwordError.textContent = "password is required";
     passwordError.style = "color:red; font-family:serif";
+   error += 1;
     password.focus();
-    error++;
+    
   } else {
     password.style.border = "2px solid green";
     passwordError.textContent = "";
