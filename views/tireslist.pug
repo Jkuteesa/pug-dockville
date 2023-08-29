@@ -10,7 +10,7 @@ head
 h3 total number clients: #{parkingCount}
 h3 total amount made : #{totalAmount}
 body(style="background-color: " )
-a.btn.btn-success(href="tires" style="position: relative; left:819px; bottom: 10px; ") new client
+a.btn.btn-success(href="tires" style="position: relative; left:819px; bottom: 10px; background: blue;") + new client
 table.table()
     thead.table-dark
         tr
@@ -24,8 +24,8 @@ table.table()
         th(scope='col') Amount 
         th(scope='col') Tire services
         th(scope='col') Amount
-        th(scope='col') Sign off
-        th(scope='col') Edit 
+        th(scope='col') Edit
+        th(scope='col') Sign off  
     tbody
     if tires.length 
         each tire in tires  
@@ -42,12 +42,16 @@ table.table()
                 td #{tire.amountt}
 
                 
-                td 
-                    form(action="/api/tire/delete" method="POST") 
-                        input(type="hidden" name="id" value=tire._id)
-                        button.btn.btn-danger(type="submit") Sign off 
+                //- td 
+                //-     form(action="/api/tire/delete" method="POST") 
+                //-         input(type="hidden" name="id" value=tire._id)
+                //-         button.btn.btn-danger(type="submit") Sign off 
                 td  
-                    a.btn.btn-warning(href="/api/tire/edit/"+tire._id) Edit
+                    a.btn.btn-warning(href="/api/tire/edit/"+tire._id style=" background: linear-gradient(to top right, #71b7e6, #9b59b6);") Edit
+                    //- a(href=`/api/tire/edit/${employee._id}`) 
+
+                td  
+                    a.btn.btn-warning(href="/api/tire/edit/"+tire._id style=" background: linear-gradient(to top right, #71b7e6, #9b59b6);") Sign off
                     //- a(href=`/api/tire/edit/${employee._id}`) 
 
     else 

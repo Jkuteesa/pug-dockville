@@ -9,7 +9,7 @@ router.get("/signup", (req, res) => {
 });
 
 // this is the first post
-router.post("/registers", async (req, res) => {
+router.post("/register", async (req, res) => {
   try {
     const user = new Signup(req.body);
     console.log(req.body);
@@ -41,7 +41,7 @@ router.post(
     console.log(req.body);
     console.log(req.session.user.manager);
     //  these lead to the dashboards of the user
-    if (req.session.user.manager === "park") {
+    if (req.session.user.manager === "parking") {
       // res.render("park.pug", { loggedinUser });
       res.render("home.pug");
     } else if (req.session.user.manager === "battery") {

@@ -22,6 +22,7 @@ body {
   align-items: center; /* center horizontally */
   background: linear-gradient(135deg, var(--main-blue), var(--main-purple));
   padding: 10px;
+  background-attachment: fixed;
 }
 /* container and form */
 .container {
@@ -30,7 +31,7 @@ body {
   background: #fff;
   padding: 25px 30px;
   border-radius: 5px;
-  margin-top: 60px;
+  margin-top: 200px;
 }
 .container .title {
   font-size: 25px;
