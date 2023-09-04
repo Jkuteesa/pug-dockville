@@ -1,10 +1,5 @@
 
 body{
-    /* background-image: url("/images/dockville.png");
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; */
     background: linear-gradient(to top right, #71b7e6, #9b59b6);
     height: 100vh;
     background-attachment: fixed;
@@ -18,20 +13,6 @@ img{
   z-index: 90;
   
 }
-
-
-/* .button{
-    background: linear-gradient(-135deg, var(--main-blue), var(--main-purple));
-    color: black;
-    border-radius: 4px;
-    font-size: 16px;
-    padding: 10px 20px;
-    text-decoration: none;
-    cursor: pointer;
-    border: solid;
-    border-radius: 10%;
-   /* position: ; 
-} */
 
 /* submit button */
 .button {
@@ -51,8 +32,6 @@ img{
     font-size: 18px;
     font-weight: 500;
     border-radius: 5px;
-    /* background-color: linear-gradient(135deg, var(--main-blue), var(--main-purple)); */
-    /* background-color: black; */
     background: linear-gradient(to top right, #71b7e6, #9b59b6);
     transition: all 0.3s ease;
     position: center;

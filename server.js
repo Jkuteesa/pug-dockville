@@ -22,7 +22,7 @@ const dashboardRoutes = require("./controllers/dashboardRoutes")
 const expressSession = require("express-session")({
     secret: "secret", 
     resave: false,
-    saveUnitialized: false
+    saveUnitialized: false 
 })
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());

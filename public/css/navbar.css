@@ -1,8 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
 
-/* body{
-    /* background-color: plum !important; 
-} */
 
  .navbar{
     background-color: white !important;
@@ -56,7 +53,3 @@
     border: none !important;
 }
 
-/* fixed position for navr narbar*/
-/* .container-fluid .nav-bar { */
-    /* position: fixed; */
-/* } */

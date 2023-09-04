@@ -118,18 +118,12 @@ form .services__details .category {
   .services__details .category input[type="checkbox"]:checked + .checkbox::before {
     opacity: 1;}
 
-/* #dot-1:checked ~ .category .one,
-#dot-2:checked ~ .category .two,
-#dot-3:checked ~ .category .three {
-  border-color: var(--sub-grey);
-  background: var(--main-purple);
-} */
-#amount{padding: 10px 50px;
+ #amount{padding: 10px 50px;
   border-color: var(--main-purple);
   border-bottom:2px solid var(--main-purple) ;
   height: 45px;
   width: 100%;
-  outline: none;
+  outline: none; 
   border-radius: 5px;
   padding-left: 15px;
   font-size: 16px;
